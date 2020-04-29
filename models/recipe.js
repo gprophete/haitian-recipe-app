@@ -6,6 +6,8 @@ const recipeSchema = new Schema ({
     name: String,
     time: String,
     ingredients: String,
+    prep: String,
+    servings: Number
 
 })
 

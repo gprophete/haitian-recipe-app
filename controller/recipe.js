@@ -53,7 +53,7 @@ recipeRouter.put('/:id', (req, res) => {
 
 //Delete Recipe
 recipeRouter.delete('/:id', (req, res) => {
-    recipeModel.deleteRecipe()
+    recipeModel.deleteRecipe(req.params.id)
         .then(() => {
             res.json('deleted')
         })
