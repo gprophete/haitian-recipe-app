@@ -1,6 +1,22 @@
 <h1>RECIPES</h1>
 
+<a href="recipe/new">
+    <button>
+        New Recipe
+    </button>
+</a>
+
 {{#each allRecipe}}
+<a class="recipe-item" href="/recipe/{{_id}}">
+  
+    <h4>{{name}}</h4>
 
-<h4>{{name}}</h4>
+    <h4>{{time}}</h4>
 
+    <h4>{{ingredients}}</h4>
+
+    <h4>{{prep}}</h4>
+
+    <h4>{{servings}}</h4>
+</a>
+{{/each}}
