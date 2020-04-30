@@ -1,6 +1,6 @@
 <h1>Edit Recipe</h1>
 
-<form action= "/shop/{{oneRecipe._id}}?_method=PUT" method="POST">
+<form action= "/recipe/{{oneRecipe._id}}?_method=PUT" method="POST">
     <label>Name</label>
     <input type= 'text' name= "name" value="{{oneRecipe.name}}" />
 
@@ -18,6 +18,6 @@
     <label>Sevings</label>
     <input type= 'Number' name= "time" value="{{oneRecipe.time}}" />
 
-
+    <input type= "submit" value= "Save" />
     
     </form>

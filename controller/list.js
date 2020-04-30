@@ -21,8 +21,8 @@ listRouter.get('/new', (req, res) => {
 
 //Edit List
 listRouter.get('/:id/edit', (req, res) => {
-    listModel.getOnelist(req.params.id)
-        .then((onelist) => {
+    listModel.getOneList(req.params.id)
+        .then((oneList) => {
             res.render('list/editList', {oneList})
         })
         .catch((error) => {
@@ -47,7 +47,7 @@ listRouter.get('/:id', (req, res) =>{
 //Create list
 listRouter.post('/', (req, res) =>{
     listModel.createList(req.body)
-        .then((newList) => {
+        .then((oneList) => {
             res.redirect(`list/${oneList._id}`)
         })
         .catch((error) => {
@@ -60,7 +60,7 @@ listRouter.post('/', (req, res) =>{
 listRouter.delete('/:id', (req, res) =>{
     listModel.deleteList(req.params.id)
         .then(() =>{
-            res.redirect('/recipe')
+            res.redirect(`/recipe`)
         })
         .catch((error) => {
             res.json('error')
@@ -71,7 +71,7 @@ listRouter.delete('/:id', (req, res) =>{
 //Update list
 listRouter.put('/:id', (req, res) =>{
     listModel.updateList(req.params.id, req.body)
-        .then((updatedList) =>{
+        .then(() =>{
             res.redirect(`/list/${req.params.id}`)
         })
         .catch((error) => {

@@ -7,6 +7,7 @@ const listSchema = new Schema ({
     produce: String,
     animalProtein: String,
     dairy: String,
+    misc: String
 
 })
 
