@@ -1,0 +1,18 @@
+<h1>{{oneList.title}}</h1>
+
+<a href= "/list/{{oneList._id}}">
+    <button>
+        Edit
+    </button>
+</a>
+
+<h4>{{oneList.produce}}</h4>
+
+<h4>{{oneList.animalProtein}}</h4>
+
+<h4>{{oneList.dairy}}</h4>
+
+<form action= "/list/{{oneList._id}}?_method= DELETE" method="POST">
+    <input type= "submit" value= "Delete">
+</form>
+

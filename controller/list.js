@@ -7,7 +7,7 @@ const listRouter = express.Router()
 listRouter.get('/', (req, res) => {
     listModel.getAllList()
         .then((allList) => {
-            res.json(allList)
+            res.render('list/allList', {allList})
         })
         .catch((error) => {
             res.json('error')
@@ -15,11 +15,28 @@ listRouter.get('/', (req, res) => {
         })
 })
 
+listRouter.get('/new', (req, res) => {
+    res.render('list/createList')
+})
+
+//Edit List
+listRouter.get('/:id/edit', (req, res) => {
+    listModel.getOnelist(req.params.id)
+        .then((onelist) => {
+            res.render('list/editList', {oneList})
+        })
+        .catch((error) => {
+            res.json('error')
+            console.log(error)
+        })
+        
+})
+
 //One list
 listRouter.get('/:id', (req, res) =>{
     listModel.getOneList(req.params.id) 
         .then((oneList) => {
-            res.json(oneList)
+            res.render('list/oneList', {oneList})
         })
         .catch((error) => {
             res.json('error')
@@ -31,19 +48,7 @@ listRouter.get('/:id', (req, res) =>{
 listRouter.post('/', (req, res) =>{
     listModel.createList(req.body)
         .then((newList) => {
-            res.json(newList)
-        })
-        .catch((error) => {
-            res.json('error')
-            console.log(error)
-        })
-})
-
-//Update list
-listRouter.put('/:id', (req, res) =>{
-    listModel.updateList(req.params.id, req.body)
-        .then((updatedList) =>{
-            res.json('updated')
+            res.redirect(`list/${oneList._id}`)
         })
         .catch((error) => {
             res.json('error')
@@ -55,12 +60,26 @@ listRouter.put('/:id', (req, res) =>{
 listRouter.delete('/:id', (req, res) =>{
     listModel.deleteList(req.params.id)
         .then(() =>{
-            res.json('deleted')
+            res.redirect('/recipe')
         })
         .catch((error) => {
             res.json('error')
             console.log(error)
         })
 })
+
+//Update list
+listRouter.put('/:id', (req, res) =>{
+    listModel.updateList(req.params.id, req.body)
+        .then((updatedList) =>{
+            res.redirect(`/list/${req.params.id}`)
+        })
+        .catch((error) => {
+            res.json('error')
+            console.log(error)
+        })
+})
+
+
 
 module.exports = listRouter
