@@ -2,6 +2,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const recipeRouter = require(`./controller/recipe.js`)
 const listRouter = require(`./controller/list.js`)
+const typeRouter = require(`./controller/type.js`)
 const app = express()
 
 const port = 3000
@@ -21,6 +22,8 @@ app.set('view engine', 'hbs')
 app.use('/recipe', recipeRouter)
 
 app.use('/list', listRouter)
+
+app.use('/type', typeRouter)
 
 
 

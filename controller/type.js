@@ -1,0 +1,83 @@
+const express = require(`express`)
+const typeModel = require(`../models/type.js`)
+
+const typeRouter = express.Router()
+
+typeRouter.get('/', (req, res) => {
+    typeModel.getAllType()
+        .then((allTypes) => {
+            res.json(allTypes)
+        })
+        .catch((error) => {
+            res.json('error')
+            console.log(error)
+        })
+})
+
+// typeRouter.get('/new', (req, res) => {
+//     res.render('type/createType')
+// })
+
+//Edit Type
+// typeRouter.get('/:id/edit', (req, res) => {
+//     typeModel.getOneType(req.params.id)
+//         .then((oneType) => {
+//             res.render('type/editType', {oneType})
+//         })
+//         .catch((error) => {
+//             res.json('error')
+//             console.log(error)
+//         })
+        
+// })
+
+//Single Type
+typeRouter.get('/:id', (req, res) => {
+    typeModel.getOneType(req.params.id)
+        .then((oneType) => {
+            res.json(oneType)
+        })
+        .catch((error) => {
+            res.json('error')
+            console.log(error)
+        })
+})
+
+typeRouter.post('/', (req, res) => {
+    typeModel.createType(req.body)
+        .then((newType) => {
+            res.json(newType)
+        })
+        .catch((error) => {
+            res.json('error')
+            console.log(error)
+        })
+})
+
+typeRouter.delete('/:id', (req, res) => {
+    typeModel.deleteType(req.params.id)
+        .then(() => {
+            res.json('Deleted')
+        })
+        .catch((error) => {
+            res.json('error')
+            console.log(error)
+        })
+})
+
+typeRouter.put('/:id', (req, res) => {
+    typeModel.updateType(req.params.id, req.body)
+        .then(() => {
+            res.json()
+        })
+        .catch((error) => {
+            res.json('error')
+            console.log(error)
+        })
+})
+
+
+
+
+
+module.exports = typeRouter
