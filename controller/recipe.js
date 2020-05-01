@@ -7,7 +7,7 @@ const recipeRouter = express.Router()
 recipeRouter.get('/', (req, res) => {
     recipeModel.getAllRecipe()
         .then((allRecipe) => {
-            res.render('recipe/allRecipe', {allRecipe})
+            res.render(`recipe/allRecipe`, {allRecipe})
         })
         .catch((error) => {
             res.json('error')
@@ -16,13 +16,13 @@ recipeRouter.get('/', (req, res) => {
 })
 
 recipeRouter.get('/new', (req, res) => {
-    res.render('recipe/createRecipe')
+    res.render(`recipe/createRecipe`)
 })
 
 recipeRouter.get('/:id/edit', (req, res) => {
     recipeModel.getOneRecipe(req.params.id)
         .then((oneRecipe) => {
-            res.render('recipe/editRecipe', {oneRecipe})
+            res.render(`recipe/editRecipe`, {oneRecipe})
         })
         .catch((error) => {
             res.json('error')
@@ -35,7 +35,7 @@ recipeRouter.get('/:id/edit', (req, res) => {
 recipeRouter.get('/:id', (req, res) => {
     recipeModel.getOneRecipe(req.params.id)
         .then((oneRecipe) => {
-            res.render('recipe/oneRecipe', {oneRecipe})
+            res.render(`recipe/oneRecipe`, {oneRecipe})
         })
         .catch((error) => {
             res.json('error')
@@ -46,8 +46,20 @@ recipeRouter.get('/:id', (req, res) => {
 //Create recipe
 recipeRouter.post('/', (req, res) => {
     recipeModel.createRecipe(req.body)
-        .then((newRecipe) => {
-            res.redirect(`recipe/${newRecipe._id}`)
+        .then((createRecipe) => {
+            res.redirect(`recipe/${createRecipe._id}`)
+        })
+        .catch((error) => {
+            res.json('error')
+            console.log(error)
+        })
+})
+
+//Update Recipe
+recipeRouter.put('/:id', (req, res) => {
+    recipeModel.updateRecipe(req.params.id, req.body)
+        .then(() => {
+            res.redirect(`/recipe/${req.params.id}`)
         })
         .catch((error) => {
             res.json('error')
@@ -67,17 +79,8 @@ recipeRouter.delete('/:id', (req, res) => {
         })
 })
 
-//Update Recipe
-recipeRouter.put('/:id', (req, res) => {
-    recipeModel.updateRecipe(req.params.id, req.body)
-        .then((updatedRecipe) => {
-            res.redirect(`/recipe/${req.params.id}`)
-        })
-        .catch((error) => {
-            res.json('error')
-            console.log(error)
-        })
-})
+
+
 
 
 module.exports = recipeRouter

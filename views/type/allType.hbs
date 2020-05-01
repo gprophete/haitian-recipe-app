@@ -2,7 +2,7 @@
 
 {{#each allType}}
  
-<a class= "type-item" href="/type/{{oneType._id}}">
+<a class= "type-item" href="/type/{{_id}}">
 
 <h3>Meal Type</h3>
 <h4>{{mealType}}</h4>
@@ -16,8 +16,8 @@
 </a>
 {{/each}}
 
-<a href= "/list/new">
+<a href= "/type/new">
     <button>
-        New List
+        New Type
     </button>
 </a>

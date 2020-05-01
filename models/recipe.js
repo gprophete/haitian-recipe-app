@@ -29,8 +29,8 @@ function createRecipe(newRecipe) {
 }
 
 //Update recipe
-function updateRecipe(id, updatedRecipe) {
-    return recipeCollection.findByIdAndUpdate(id, updatedRecipe)
+function updateRecipe(id, editRecipe) {
+    return recipeCollection.findByIdAndUpdate(id, editRecipe)
 
 }
 

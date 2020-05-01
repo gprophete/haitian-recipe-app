@@ -1,23 +1,22 @@
 <h1>Edit Recipe</h1>
 
-<form action= "/recipe/{{oneRecipe._id}}?_method=PUT" method="POST">
+<form action="/recipe/{{oneRecipe._id}}?_method=PUT" method="POST">
     <label>Name</label>
-    <input type= 'text' name= "name" value="{{oneRecipe.name}}" />
+    <input type='text' name="name" value="{{oneRecipe.name}}" />
 
     <label>Time</label>
-    <input type= 'text' name= "time" value="{{oneRecipe.time}}" />
+    <input type='text' name="time" value="{{oneRecipe.time}}" />
 
-    <label>ingredients</label>
-    <input type= 'text' name= "time" value="{{oneRecipe.ingredients}}" />
+    <label>Ingredients</label>
+    <input type='text' name="ingredients" value="{{oneRecipe.ingredients}}" />
 
-    
+
     <label>prep</label>
-    <p>
-        {{oneRecipe.prep}}
-    </p>
-    <label>Sevings</label>
-    <input type= 'Number' name= "time" value="{{oneRecipe.time}}" />
-
-    <input type= "submit" value= "Save" />
+    <input type="text" name="prep" value="{{oneRecipe.prep}}" />
     
-    </form>
+    <label>Sevings</label>
+    <input type='Number' name="servings" value="{{oneRecipe.servings}}" />
+
+    <input type="submit" value="Save" />
+
+</form>

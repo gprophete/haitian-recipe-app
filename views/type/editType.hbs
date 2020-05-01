@@ -1,0 +1,15 @@
+<h1>Edit Type</h1>
+
+<form action="/type/{{oneType._id}}?_method=PUT" method="POST">
+   
+    <label>Meal Type</label>
+    <input type= "text" name= "{{oneType.mealType}}" />
+
+    <label>Cooking Type</label>
+    <input type= "text" name "{{oneType.cookingType}}" />
+
+    <label>Diet Type</label>
+    <input type= "text" name "{{oneType.dietType}}" />
+
+    <input type="submit" value="Save" />
+</form>
