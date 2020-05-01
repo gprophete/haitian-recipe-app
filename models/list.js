@@ -30,8 +30,8 @@ function createList(newList) {
 }
 
 //Update list
-function updateList(id, updatedList) {
-    return listCollection.findByIdAndUpdate(id, updatedList)
+function updateList(id, editList) {
+    return listCollection.findByIdAndUpdate(id, editList)
 }
 
 //Delete list
