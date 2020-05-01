@@ -54,6 +54,17 @@ typeRouter.post('/', (req, res) => {
         })
 })
 
+typeRouter.put('/:id', (req, res) => {
+    typeModel.updateType(req.params.id, req.body)
+        .then(() => {
+            res.redirect(`/type/${req.params.id}`)
+        })
+        .catch((error) => {
+            res.json('error')
+            console.log(error)
+        })
+})
+
 typeRouter.delete('/:id', (req, res) => {
     typeModel.deleteType(req.params.id)
         .then(() => {
@@ -65,16 +76,7 @@ typeRouter.delete('/:id', (req, res) => {
         })
 })
 
-typeRouter.put('/:id', (req, res) => {
-    typeModel.updateType(req.params.id, req.body)
-        .then(() => {
-            res.redirect(`/type/${req.params.id}`)
-        })
-        .catch((error) => {
-            res.json('error')
-            console.log(error)
-        })
-})
+
 
 
 

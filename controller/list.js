@@ -56,6 +56,8 @@ listRouter.post('/', (req, res) =>{
         })
 })
 
+
+
 //Update list
 listRouter.put('/:id', (req, res) =>{
     listModel.updateList(req.params.id, req.body)
@@ -68,18 +70,20 @@ listRouter.put('/:id', (req, res) =>{
         })
 })
 
-
 // Delete list
 listRouter.delete('/:id', (req, res) =>{
     listModel.deleteList(req.params.id)
         .then(() =>{
-            res.redirect(`/recipe`)
+            res.redirect(`/list`)
         })
         .catch((error) => {
             res.json('error')
             console.log(error)
         })
 })
+
+
+
 
 
 

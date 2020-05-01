@@ -3,13 +3,13 @@
 <form action="/type/{{oneType._id}}?_method=PUT" method="POST">
    
     <label>Meal Type</label>
-    <input type= "text" name= "{{oneType.mealType}}" />
+    <input type= "text" name= "mealType" value="{{oneType.mealType}}" />
 
     <label>Cooking Type</label>
-    <input type= "text" name "{{oneType.cookingType}}" />
+    <input type= "text" name="cookingType" value= "{{oneType.cookingType}}" />
 
     <label>Diet Type</label>
-    <input type= "text" name "{{oneType.dietType}}" />
+    <input type= "text" name="dietType" value= "{{oneType.dietType}}" />
 
     <input type="submit" value="Save" />
 </form>
