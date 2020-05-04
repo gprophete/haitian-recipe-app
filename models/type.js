@@ -3,7 +3,7 @@ const mongoose = require(`../db/connection.js`)
 const Schema = mongoose.Schema
 
 const typeSchema = new Schema ({
-    
+
     recipeId:{ 
         type : String,
         required : true,
@@ -32,7 +32,7 @@ function createType(newType) {
 
 //Get type by recipeId
 function getAllTypeByRecipeId(recipeId) {
-    return typeCollection.find(recipeId)
+    return typeCollection.find({recipeId: recipeId})
 }
 
 
