@@ -1,5 +1,3 @@
-.recipe-item {
-    margin: 30px;
-    padding: 30px;
-    background-color: cornflowerblue;
+body {
+    background: rgb(126, 161, 228);
 }

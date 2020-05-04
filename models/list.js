@@ -30,12 +30,12 @@ function getOneList(id) {
 
 //Get list by recipeId
 function getAllListByRecipeId(recipeId) {
-    return listCollection.findById({recipeId: recipeId})
+    return listCollection.find({recipeId: recipeId})
 }
 
 //Create list
-function createList() {
-    return listCollection.create()
+function createList(newList) {
+    return listCollection.create(newList)
 }
 
 //Update list

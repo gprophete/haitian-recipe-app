@@ -36,8 +36,8 @@ recipeRouter.get('/:id/edit', (req, res) => {
 recipeRouter.get('/:id', async (req, res) => {
     try {
         const oneRecipe = await recipeModel.getOneRecipe(req.params.id)
-        const oneList = await listModel.getAllListByRecipeId(req.params.id)
-        res.render(`recipe/oneRecipe`, { oneRecipe, oneList })
+        const lists = await listModel.getAllListByRecipeId(req.params.id)
+        res.render('recipe/oneRecipe', { oneRecipe, lists })
     } catch (error) {
         res.json('error')
         console.log(error)

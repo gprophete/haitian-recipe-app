@@ -22,32 +22,39 @@
 </form>
 <hr>
 
-<form action= "/list" method="POST">
-    <input type= "hidden" value= "{{oneRecipe._id}}" name= "recipeId"/>
-    <label for= "produce">Produce</label>
-    <textarea id="produce" name= "produce"></textarea> 
+<form action="/list" method="POST">
+    <input type="hidden" value="{{oneRecipe._id}}" name="recipeId" />
 
-    <label for= "animalProtein">Protein</label>
-    <textarea id= "animalProtein" name= "animalProtein"></textarea>
+    <label for="produce">Produce</label>
+    <textarea></textarea>
 
-    <label for= "dairy">Dairy</label>
-    <textarea id= "dairy" name= "dairy"></textarea>
+    <label for="animalProtein">Protein</label>
+    <textarea id="animalProtein" name="animalProtein"></textarea>
 
-    <label for= "misc">Misc</label>
-    <textarea id= "misc" name= "misc"></textarea>
+    <label for="dairy">Dairy</label>
+    <textarea id="dairy" name="dairy"></textarea>
+
+    <label for="misc">Misc</label>
+    <textarea id="misc" name="misc"></textarea>
 
 
-    <input type= "submit" value= "Create" />
+    <input type="submit" value="Create" />
 
 
 </form>
 
-{{#each oneList}}
 
-<h4>{{oneList.produce}}</h4>
+{{#each lists}}
 
-<h4>{{oneList.animalProtein}}</h4>
+<br>
 
-<h4>{{oneList.dairy}}</h4>
+<h4>{{produce}}</h4>
+
+<h4>{{animalProtein}}</h4>
+
+<h4>{{dairy}}</h4>
+
+<h4>{{misc}}</h4>
+<br>
 
 {{/each}}
