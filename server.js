@@ -12,11 +12,11 @@ app.use(methodOverride('_method'))
 
 app.use(express.urlencoded())
 
-app.get('/', (req, res) => {
-    res.json('Home Page')
-})
+// app.get('/', (req, res) => {
+//     res.json(`Ok`)
+// })
 
-
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'hbs')
 
 app.use('/recipe', recipeRouter)

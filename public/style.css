@@ -1,3 +1,7 @@
 body {
     background: rgb(126, 161, 228);
 }
+
+.category {
+    font : italic;
+}
