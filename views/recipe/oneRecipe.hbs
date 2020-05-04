@@ -15,7 +15,39 @@
 
 <h4>{{oneRecipe.servings}}</h4>
 
+<hr>
 
 <form action="/recipe/{{oneRecipe._id}}?_method=DELETE" method="POST">
     <input type="submit" value="Delete recipe" />
 </form>
+<hr>
+
+<form action= "/list" method="POST">
+    <input type= "hidden" value= "{{oneRecipe._id}}" name= "recipeId"/>
+    <label for= "produce">Produce</label>
+    <textarea id="produce" name= "produce"></textarea> 
+
+    <label for= "animalProtein">Protein</label>
+    <textarea id= "animalProtein" name= "animalProtein"></textarea>
+
+    <label for= "dairy">Dairy</label>
+    <textarea id= "dairy" name= "dairy"></textarea>
+
+    <label for= "misc">Misc</label>
+    <textarea id= "misc" name= "misc"></textarea>
+
+
+    <input type= "submit" value= "Create" />
+
+
+</form>
+
+{{#each oneList}}
+
+<h4>{{oneList.produce}}</h4>
+
+<h4>{{oneList.animalProtein}}</h4>
+
+<h4>{{oneList.dairy}}</h4>
+
+{{/each}}

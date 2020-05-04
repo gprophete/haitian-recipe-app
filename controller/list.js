@@ -44,11 +44,13 @@ listRouter.get('/:id', (req, res) =>{
         })
 })
 
+
+
 //Create list
 listRouter.post('/', (req, res) =>{
     listModel.createList(req.body)
         .then((oneList) => {
-            res.redirect(`list/${oneList._id}`)
+            res.redirect(`list`)
         })
         .catch((error) => {
             res.json('error')
