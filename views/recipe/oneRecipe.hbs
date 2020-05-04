@@ -29,13 +29,13 @@
     <textarea></textarea>
 
     <label for="animalProtein">Protein</label>
-    <textarea id="animalProtein" name="animalProtein"></textarea>
+    <textarea></textarea>
 
     <label for="dairy">Dairy</label>
-    <textarea id="dairy" name="dairy"></textarea>
+    <textarea></textarea>
 
     <label for="misc">Misc</label>
-    <textarea id="misc" name="misc"></textarea>
+    <textarea></textarea>
 
 
     <input type="submit" value="Create" />
@@ -44,9 +44,8 @@
 </form>
 
 
-{{#each lists}}
-
-<br>
+{{#each list}}
+<a href="/list/{{_id}}">
 
 <h4>{{produce}}</h4>
 
@@ -57,4 +56,24 @@
 <h4>{{misc}}</h4>
 <br>
 
+</a>
 {{/each}}
+
+<form action= "/type" method="POST">
+
+    <input type="hidden" value="{{oneRecipe._id}}" name="recipeId" />
+
+    <label>Meal Type</label>
+    <input type= "text" name= "mealType" />
+
+    <label>Cooking Type</label>
+    <input type= "text" name= "cookingType" />
+
+    <label>Diet Type</label>
+    <input type= "text" name= "dietType" />
+
+    <input type= "submit" value= "Create" />
+
+
+</form>
+

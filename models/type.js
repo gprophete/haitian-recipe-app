@@ -3,6 +3,11 @@ const mongoose = require(`../db/connection.js`)
 const Schema = mongoose.Schema
 
 const typeSchema = new Schema ({
+    
+    recipeId:{ 
+        type : String,
+        required : true,
+    } ,
     mealType: String,
     cookingType: String,
     dietType: String,
@@ -25,6 +30,12 @@ function createType(newType) {
     return typeCollection.create(newType)
 }
 
+//Get type by recipeId
+function getAllTypeByRecipeId(recipeId) {
+    return typeCollection.find(recipeId)
+}
+
+
 //Update type
 function updateType(id, updatedType) {
     return typeCollection.findByIdAndUpdate(id, updatedType)
@@ -38,6 +49,7 @@ function deleteType(id) {
 module.exports = {
     getAllType,
     getOneType,
+    getAllTypeByRecipeId,
     createType,
     updateType,
     deleteType,

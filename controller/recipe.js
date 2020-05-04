@@ -1,7 +1,7 @@
 const express = require(`express`)
 const recipeModel = require(`../models/recipe.js`)
 const listModel = require(`../models/list.js`)
-
+const typeModel = require(`../models/type.js`)
 const recipeRouter = express.Router()
 
 //All recipes
@@ -32,17 +32,19 @@ recipeRouter.get('/:id/edit', (req, res) => {
 
 })
 
-//One recipe + list
+//One recipe + list + Type
 recipeRouter.get('/:id', async (req, res) => {
     try {
         const oneRecipe = await recipeModel.getOneRecipe(req.params.id)
-        const lists = await listModel.getAllListByRecipeId(req.params.id)
-        res.render('recipe/oneRecipe', { oneRecipe, lists })
+        const list = await listModel.getAllListByRecipeId(req.params.id)
+        const type = await typeModel.getAllTypeByRecipeId(req.params.id)
+        res.render('recipe/oneRecipe', { oneRecipe, list, type })
     } catch (error) {
         res.json('error')
         console.log(error)
     }
 })
+
 
     //Create recipe
     recipeRouter.post('/', (req, res) => {
