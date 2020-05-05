@@ -1,7 +1,22 @@
+/* font-family: 'Reenie Beanie', cursive;
+font-family: 'Caveat', cursive; */
+
+
 body {
-    background: rgb(126, 161, 228);
+    background-image: url(public/haitian-emblem.png);
+    
 }
+.header {
+    font-family: 'Caveat', cursive;
+    font-weight: 100;
+    font-size: 60px;
+}
+.recipe-item {
+    font-family: 'Reenie Beanie', cursive
+}
+
 
 .category {
     font : italic;
 }
+
