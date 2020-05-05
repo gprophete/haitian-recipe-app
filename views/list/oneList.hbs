@@ -5,7 +5,7 @@
         Edit
     </button>
 </a>
-
+<a href= "/recipe">
 <h4>{{oneList.produce}}</h4>
 
 <h4>{{oneList.animalProtein}}</h4>
@@ -13,7 +13,7 @@
 <h4>{{oneList.dairy}}</h4>
 
 <h4>{{oneList.misc}}</h4>
-
+</a>
 <form action= "/list/{{oneList._id}}?_method=DELETE" method="POST">
     <input type= "submit" value= "Delete">
 </form>
