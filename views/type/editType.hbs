@@ -1,15 +1,42 @@
 <h1>Edit Type</h1>
 
 <form action="/type/{{oneType._id}}?_method=PUT" method="POST">
-   
-    <label>Meal Type</label>
-    <input type= "text" name= "mealType" value="{{oneType.mealType}}" />
 
-    <label>Cooking Type</label>
-    <input type= "text" name="cookingType" value= "{{oneType.cookingType}}" />
+    <div class="category">
+        <div for="mealType">Meal Type:</div>
+        <input list="meals" id="mealType" name="mealType" value="{{oneType.mealType}}"/>
 
-    <label>Diet Type</label>
-    <input type= "text" name="dietType" value= "{{oneType.dietType}}" />
+        <datalist id="meals">
+            <option value="Breakfast">
+            <option value="Lunch">
+            <option value="Dinner">
+            <option value="Snack">
+        </datalist>
 
-    <input type="submit" value="Save" />
+        <div for="cookingType">Cooking Type:</div>
+        <input list="cooks" id="cookingType" name="cookingType" value="{{oneType.cookingType}}"/>
+
+        <datalist id="cooks">
+            <option value="Grilled">
+            <option value="Fried">
+            <option value="Baked">
+            <option value="Broiled">
+            <option value="boiled">
+            <option value="sauteed">
+        </datalist>
+
+        <div for="dietType">Meal Type:</div>
+        <input list="diets" id="dietType" name="dietType" value="{{oneType.dietType}}" />
+
+        <datalist id="diets">
+            <option value="High Carb">
+            <option value="Low Carb">
+            <option value="High Fat">
+            <option value="Low Fat">
+
+        </datalist>
+
+
+        <input type="submit" value="Save" />
 </form>
+
