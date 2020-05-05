@@ -3,20 +3,48 @@ font-family: 'Caveat', cursive; */
 
 
 body {
-    background-image: url(public/haitian-emblem.png);
+    background:  #CC9999;
     
 }
 .header {
     font-family: 'Caveat', cursive;
     font-weight: 100;
     font-size: 60px;
+    padding-left: 30px;
+    margin-left: 20px auto;
 }
-.recipe-item {
-    font-family: 'Reenie Beanie', cursive
+.item {
+    font-family: 'Reenie Beanie', cursive;
+    font-weight: 200;
+    font-size: 40px;
+    margin: 40px;
+    padding: 20px
 }
 
-
-.category {
-    font : italic;
+a {
+    text-decoration: none;
 }
 
+.clicker {
+    background-color: #6600FF;
+    border-radius: 30%;
+    border-color: rgb(46, 3, 110);
+    font-size: 20px;
+    font-family: 'Reenie Beanie', cursive ;
+    padding: 15px 25px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 10px rgb(129, 94, 94);
+    
+
+
+}
+.clicker:hover {
+    background-color: darkblue;
+
+}
+
+.clicker:active {
+    transform: translateY(4px)
+}
