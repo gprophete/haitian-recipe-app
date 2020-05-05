@@ -6,12 +6,13 @@
     </button>
 </a>
 
+<a href= "/recipe">
 <h4>{{oneType.mealType}}</h4>
 
 <h4>{{oneType.cookingType}}</h4>
 
 <h4>{{oneType.dietType}}</h4>
-
+</a>
 <form action= "/type/{{oneType._id}}?_method=DELETE" method="POST">
     <input type= "submit" value= "Delete" />
 </form>
