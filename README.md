@@ -18,9 +18,9 @@
 - heroku
 
 ## Wireframe
-![](Screen Shot 2020-05-05 at 12.42.23 PM.png)
+(https://drive.google.com/open?id=1aDLHJQdqF1HwASjeoTyJyu-i_jJE2cxN)
 
 ## ERD
-![](Haitian Recipes ERD.png)
+https://drive.google.com/open?id=1OiKs89I8Cu95QEMi5ghKBJJPSfCngsGU
 
 
