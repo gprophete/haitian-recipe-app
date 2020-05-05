@@ -23,6 +23,10 @@ body {
 
 a {
     text-decoration: none;
+    
+}
+a:hover {
+    background-color: rgb(231, 229, 245);
 }
 
 .clicker {
@@ -31,13 +35,11 @@ a {
     border-color: rgb(46, 3, 110);
     font-size: 20px;
     font-family: 'Reenie Beanie', cursive ;
-    padding: 15px 25px;
+    padding: 25px;
     text-align: center;
     cursor: pointer;
     outline: none;
     box-shadow: 0 10px rgb(129, 94, 94);
-    
-
 
 }
 .edit-button {
@@ -51,11 +53,6 @@ a {
 
 .clicker:active {
     transform: translateY(4px)
-}
-
-.category {
-    
-
 }
 
 .list-item {
