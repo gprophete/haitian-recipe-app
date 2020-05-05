@@ -46,7 +46,7 @@ typeRouter.get('/:id', (req, res) => {
 typeRouter.post('/', (req, res) => {
     typeModel.createType(req.body)
         .then((newType) => {
-            res.redirect(`type/${newType._id}`)
+            res.redirect(`/recipe/${newType.recipeId}`)
         })
         .catch((error) => {
             res.json('error')

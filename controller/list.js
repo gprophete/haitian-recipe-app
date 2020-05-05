@@ -50,7 +50,7 @@ listRouter.get('/:id', (req, res) =>{
 listRouter.post('/', (req, res) =>{
     listModel.createList(req.body)
         .then((newList) => {
-            res.redirect(`/list/${newList._id}`)
+            res.redirect(`/recipe/${newList.parentId}`)
             
         })
         .catch((error) => {

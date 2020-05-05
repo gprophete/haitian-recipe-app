@@ -18,9 +18,9 @@
 - heroku
 
 ## Wireframe
-![](2020-05-05-14-19-19.png)
+![](Screen Shot 2020-05-05 at 12.42.23 PM.png)
 
 ## ERD
-![](2020-05-05-14-18-25.png)
+![](Haitian Recipes ERD.png)
 
 
