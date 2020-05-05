@@ -4,19 +4,84 @@
     <button>Edit Recipe</button>
 </a>
 
-<h3>Cooking Time</h3>
-<div>{{oneRecipe.time}}</div>
-<h3>Ingredients</h3>
-<div>{{oneRecipe.ingredients}}</div>
-<h3>Instrunctions</h3>
-<div>{{oneRecipe.prep}}</div>
-<h3>Servings</h3>
-<div>{{oneRecipe.servings}}</div>
-
+<div class="recipe-item">
+    <div>Cooking Time: {{oneRecipe.time}}</div>
+    <br>
+    <div>Ingredients: {{oneRecipe.ingredients}}</div>
+    <br>
+    <div>Instrunctions: {{oneRecipe.prep}} </div>
+    <br>
+    <div>Servings: {{oneRecipe.servings}}</div>
+    <br>
+</div>
 <form action="/recipe/{{oneRecipe._id}}?_method=DELETE" method="POST">
     <input type="submit" value="Delete recipe" />
 </form>
-<hr>
+
+<div class="list-item">
+    {{#each category}}
+
+    <a class="type-item" href="/type/{{_id}}">
+
+
+        <div class="label-item">Meal Type</div>
+        <div class="single-item">{{mealType}}</div>
+
+        <div class="label-item">Cooking Type</div>
+        <div class="single-item">{{cookingType}}</div>
+
+        <div class="label-item">Diet Type</div>
+        <div class="single-item">{{dietType}}</div>
+
+    </a>
+    {{/each}}
+
+
+    <form action="/type" method="POST">
+
+        <input type="hidden" value="{{oneRecipe._id}}" name="recipeId" />
+
+        <div class="category">
+            <div for="mealType">Meal Type:</div>
+            <input list="meals" id="mealType" name="mealType" />
+
+            <datalist id="meals">
+                <option value="Breakfast">
+                <option value="Lunch">
+                <option value="Dinner">
+                <option value="Snack">
+            </datalist>
+
+            <div for="cookingType">Cooking Type:</div>
+            <input list="cooks" id="cookingType" name="cookingType" />
+
+            <datalist id="cooks">
+                <option value="Grilled">
+                <option value="Fried">
+                <option value="Baked">
+                <option value="Broiled">
+                <option value="boiled">
+                <option value="sauteed">
+            </datalist>
+
+            <div for="dietType">Meal Type:</div>
+            <input list="diets" id="dietType" name="dietType" />
+
+            <datalist id="diets">
+                <option value="High Carb">
+                <option value="Low Carb">
+                <option value="High Fat">
+                <option value="Low Fat">
+
+            </datalist>
+
+
+            <br>
+            <input type="submit" value="Create" />
+
+        </div>
+</div>
+</form>
 
 <div class="list-item">
     {{#each list}}
@@ -30,25 +95,26 @@
 
         <label class="label-item">Dairy</label>
         <div class="single-item">{{dairy}}</div>
-        
         <label class="label-item">Misc</label>
         <div class="single-item">{{misc}}</div>
 
     </a>
+    {{/each}}
+
 
     <form action="/list" method="POST">
         <input type="hidden" value="{{oneRecipe._id}}" name="parentId" />
-
-        <h3>Produce</h3>
+        <h2>Shopping List</h2>
+        <div>Produce</div>
         <textarea class="items" type="text" name="produce"></textarea>
 
-        <h3>Protein</h3>
+        <div>Protein</div>
         <textarea class="items" type="text" name="animalProtein"></textarea>
 
-        <h3>Dairy</h3>
+        <div>Dairy</div>
         <textarea class="items" type="text" name="dairy"></textarea>
 
-        <h3>Misc</h3>
+        <div>Misc</div>
         <textarea class="items" type="text" name="misc"></textarea>
         <br>
 
@@ -56,79 +122,6 @@
 
 
     </form>
-    {{/each}}
-</div>
-<hr>
-<div class="type-item">
-    {{#each category}}
 
-    <a class="type-item" href="/type/{{_id}}">
-
-
-        <h3 class="category">Meal Type</h3>
-        <div>{{mealType}}</div>
-
-        <h3>Cooking Type</h3>
-        <div>{{cookingType}}</div>
-
-        <h3>Diet Type</h3>
-        <div>{{dietType}}</div>
-
-    </a>
-    {{/each}}
 </div>
 
-<form action="/type" method="POST">
-
-    <input type="hidden" value="{{oneRecipe._id}}" name="recipeId" />
-
-    <div class="category">
-        {{!-- 
-    <h3>Meal Type</h3>
-    <input type="text" name="mealType" />
-
-    <h3>Cooking Type</h3>
-    <input type="text" name="cookingType" />
-
-    <h3>Diet Type</h3>
-    <input type="text" name="dietType" /> --}}
-
-        <label for="mealType">Meal Type:</label>
-        <input list="meals" id="mealType" name="mealType" />
-
-        <datalist id="meals">
-            <option value="Breakfast">
-            <option value="Lunch">
-            <option value="Dinner">
-            <option value="Snack">
-        </datalist>
-
-        <label for="cookingType">Cooking Type:</label>
-        <input list="cooks" id="cookingType" name="cookingType" />
-
-        <datalist id="cooks">
-            <option value="Grilled">
-            <option value="Fried">
-            <option value="Baked">
-            <option value="Broiled">
-            <option value="boiled">
-            <option value="sauteed">
-        </datalist>
-
-        <label for="dietType">Meal Type:</label>
-        <input list="diets" id="dietType" name="dietType" />
-
-        <datalist id="diets">
-            <option value="High Carb">
-            <option value="Low Carb">
-            <option value="High Fat">
-            <option value="Low Fat">
-
-        </datalist>
-
-
-        <br>
-        <input type="submit" value="Create" />
-
-    </div>
-</form>

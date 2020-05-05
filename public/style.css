@@ -40,6 +40,10 @@ a {
 
 
 }
+.edit-button {
+    margin-bottom: 30px;
+    padding-bottom: 50px;
+}
 .clicker:hover {
     background-color: darkblue;
 
@@ -72,4 +76,13 @@ a {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 300px;
     font-size: 30px;
+    color: rgb(15, 15, 80);
+}
+
+.recipe-item {
+    margin: 30px;
+    padding: 10px;
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+    color: blueviolet
 }

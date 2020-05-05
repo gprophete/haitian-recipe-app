@@ -1,26 +1,26 @@
 <h1>Create New Recipe</h1>
+<div class= 'recipe-item'>
+<form action="/recipe" method="POST">
 
-<form action= "/recipe" method="POST">
-
-    <label>Name</label>
+    <div>Name</div>
     <input type="text" name="name" />
 
-    <label>Time</label>
+    <div>Time</div>
     <input type="text" name="time" />
 
-    <label for= "ingredients">Ingredients</label>
-    <textarea id="ingredients" name= "ingredients" > 
-
-    </textarea>
-
-    <label for= "prep">Prep</label>
-    <textarea type= "text" name= "prep"> 
-
-    </textarea>
-    
-    <label>Servings</label>
+    <div>Servings</div>
     <input type="Number" name="servings" />
 
+    <div for="ingredients">Ingredients</div>
+    <textarea id="ingredients" name="ingredients" rows= "10">
+
+    </textarea>
+
+    <div for="prep">Prep</div>
+    <textarea type="text" name="prep" cols="50" rows="10"></textarea>
+
+    
     <input type="submit" value="Create" />
 
 </form>
+</div>
