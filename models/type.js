@@ -30,9 +30,9 @@ function createType(newType) {
     return typeCollection.create(newType)
 }
 
-//Get type by recipeId
+// //Get type by recipeId
 function getAllTypeByRecipeId(recipeId) {
-    return typeCollection.find({recipeId: recipeId})
+    return typeCollection.find({recipeId})
 }
 
 

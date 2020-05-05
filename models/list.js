@@ -2,12 +2,12 @@ const mongoose = require(`../db/connection.js`)
 
 const Schema = mongoose.Schema
 
-const listSchema = new Schema ({
-    // recipeId: mongoose.Types.ObjectId,
-    recipeId:{ 
-        type : String,
-        required : true,
-    } ,
+const listSchema = new Schema({
+    // parentId: mongoose.Types.ObjectId,
+    parentId: {
+        type: String,
+        required: true,
+    },
     produce: String,
     animalProtein: String,
     dairy: String,
@@ -28,9 +28,9 @@ function getOneList(id) {
     return listCollection.findById(id)
 }
 
-//Get list by recipeId
-function getAllListByRecipeId(recipeId) {
-    return listCollection.find({recipeId: recipeId})
+//Get list by parentId
+function getAllListByParentId(parentId) {
+    return listCollection.find({ parentId: parentId })
 }
 
 //Create list
@@ -51,7 +51,7 @@ function deleteList(id) {
 module.exports = {
     getAllList,
     getOneList,
-    getAllListByRecipeId,
+    getAllListByParentId,
     createList,
     updateList,
     deleteList,

@@ -23,19 +23,19 @@
 <hr>
 
 <form action="/list" method="POST">
-    <input type="hidden" value="{{oneRecipe._id}}" name="recipeId" />
+    <input type="hidden" value="{{oneRecipe._id}}" name="parentId" />
 
-    <label for="produce">Produce</label>
-    <textarea></textarea>
+    <label>Produce</label>
+    <textarea type= "text" name= "produce"></textarea>
 
-    <label for="animalProtein">Protein</label>
-    <textarea></textarea>
+    <label>Protein</label>
+    <textarea type= "text" name= "animalProtein"></textarea>
 
-    <label for="dairy">Dairy</label>
-    <textarea></textarea>
+    <label>Dairy</label>
+    <textarea type= "text" name= "dairy"></textarea>
 
-    <label for="misc">Misc</label>
-    <textarea></textarea>
+    <label>Misc</label>
+    <textarea type= "text" name= "misc"></textarea>
 
 
     <input type="submit" value="Create" />
@@ -47,50 +47,48 @@
 {{#each list}}
 <a href="/list/{{_id}}">
 
-<h4>{{produce}}</h4>
+    <h4>{{produce}}</h4>
 
-<h4>{{animalProtein}}</h4>
+    <h4>{{animalProtein}}</h4>
 
-<h4>{{dairy}}</h4>
+    <h4>{{dairy}}</h4>
 
-<h4>{{misc}}</h4>
-<br>
+    <h4>{{misc}}</h4>
 
 </a>
 {{/each}}
-
-<form action= "/type" method="POST">
+<hr>
+<form action="/type" method="POST">
 
     <input type="hidden" value="{{oneRecipe._id}}" name="recipeId" />
 
     <label>Meal Type</label>
-    <input type= "text" name= "mealType" />
+    <input type="text" name="mealType" />
 
     <label>Cooking Type</label>
-    <input type= "text" name= "cookingType" />
+    <input type="text" name="cookingType" />
 
     <label>Diet Type</label>
-    <input type= "text" name= "dietType" />
+    <input type="text" name="dietType" />
 
-    <input type= "submit" value= "Create" />
+    <input type="submit" value="Create" />
 
 
 </form>
 
-{{#each type}}
+{{#each category}}
 
-<a class= "type-item" href="/type/{{_id}}">
+<a class="type-item" href="/type/{{_id}}">
 
 
-<h3 class= "category">Meal Type</h3>
-<h4>{{mealType}}</h4>
+    <h3 class="category">Meal Type</h3>
+    <h4>{{mealType}}</h4>
 
-<h3>Cooking Type</h3>
-<h4>{{cookingType}}</h4>
+    <h3>Cooking Type</h3>
+    <h4>{{cookingType}}</h4>
 
-<h3>Diet Type</h3>
-<h4>{{dietType}}</h4>
+    <h3>Diet Type</h3>
+    <h4>{{dietType}}</h4>
 
 </a>
 {{/each}}
-

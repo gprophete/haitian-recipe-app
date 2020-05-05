@@ -4,14 +4,18 @@
     {{!-- <label>Title</label>
     <input type="text" name="title" value="{{oneList.title}}" /> --}}
 
-    <label>Produce</label>
-    <input type= "text" name="produce" value= "{{oneList.produce}}" />
+    <label for="produce">Produce</label>
+    <textarea type="text" name= "produce">{{oneList.produce}}</textarea>
 
-    <label>Animal Protein</label>
-    <input type= "text" name= "animalProtein" value= "{{oneList.animalProtein}}"/>
+    <label for="animalProtein">Protein</label>
+    <textarea type="text" name= "animalProtein">{{oneList.animalProtein}}</textarea>
 
-    <label>Dairy</label>
-    <input type= "text" name= "dairy" value= "{{oneList.dairy}}"/>
+    <label for="dairy">Dairy</label>
+    <textarea type="text" name= "dairy">{{oneList.dairy}}</textarea>
+
+    <label>Misc</label>
+    <textarea type="text" name="misc">{{oneList.misc}}</textarea> 
+
 
     <input type="submit" value="Save" />
 </form>

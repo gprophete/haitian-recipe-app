@@ -50,8 +50,8 @@ listRouter.get('/:id', (req, res) =>{
 listRouter.post('/', (req, res) =>{
     listModel.createList(req.body)
         .then((newList) => {
-            res.redirect(`list/${newList._id}`)
-            console.log(newList)
+            res.redirect(`/list/${newList._id}`)
+            
         })
         .catch((error) => {
             res.json('error')

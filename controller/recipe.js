@@ -36,9 +36,9 @@ recipeRouter.get('/:id/edit', (req, res) => {
 recipeRouter.get('/:id', async (req, res) => {
     try {
         const oneRecipe = await recipeModel.getOneRecipe(req.params.id)
-        const list = await listModel.getAllListByRecipeId(req.params.id)
-        const type = await typeModel.getAllTypeByRecipeId(req.params.id)
-        res.render('recipe/oneRecipe', { oneRecipe, list, type })
+        const list = await listModel.getAllListByParentId(req.params.id)
+        const category = await typeModel.getAllTypeByRecipeId(req.params.id)
+        res.render('recipe/oneRecipe', { oneRecipe, list, category })
     } catch (error) {
         res.json('error')
         console.log(error)
