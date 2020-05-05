@@ -17,7 +17,7 @@ recipeRouter.get('/', (req, res) => {
 })
 
 recipeRouter.get('/new', (req, res) => {
-    res.render(`recipe/createRecipe`)
+    res.render(`/recipe/createRecipe`)
 })
 
 recipeRouter.get('/:id/edit', (req, res) => {
@@ -50,7 +50,7 @@ recipeRouter.get('/:id', async (req, res) => {
     recipeRouter.post('/', (req, res) => {
         recipeModel.createRecipe(req.body)
             .then((createRecipe) => {
-                res.redirect(`recipe/${createRecipe._id}`)
+                res.redirect(`/recipe/${createRecipe._id}`)
             })
             .catch((error) => {
                 res.json('error')
@@ -62,7 +62,7 @@ recipeRouter.get('/:id', async (req, res) => {
     recipeRouter.put('/:id', (req, res) => {
         recipeModel.updateRecipe(req.params.id, req.body)
             .then(() => {
-                res.redirect(`/recipe/${req.params.id}`)
+                res.redirect(`recipe/${req.params.id}`)
             })
             .catch((error) => {
                 res.json('error')
