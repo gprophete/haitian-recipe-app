@@ -1,6 +1,7 @@
 # haitian-recipe-app
 
-## The app is designed to be used by chefs who want to save and publish their creations or existing recipes with their own signature. 
+## Description
+The app is designed to be used by users who want to save their food recipes
 
 ## The database contains three models 
 1- Recipes
