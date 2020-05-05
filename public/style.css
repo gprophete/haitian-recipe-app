@@ -3,7 +3,7 @@ font-family: 'Caveat', cursive; */
 
 
 body {
-    background:  #CC9999;
+    background: #00DFFF;
     
 }
 .header {
@@ -47,4 +47,29 @@ a {
 
 .clicker:active {
     transform: translateY(4px)
+}
+
+.category {
+    
+
+}
+
+.list-item {
+    margin: 50px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.single-item {
+    font-family:'Reenie Beanie', cursive;
+    font-size: 40px;
+}
+
+.label-item {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 300px;
+    font-size: 30px;
 }
