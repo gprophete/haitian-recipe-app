@@ -23,7 +23,7 @@ The app is designed to be used by users who want to save their food recipes
 (https://drive.google.com/open?id=1aDLHJQdqF1HwASjeoTyJyu-i_jJE2cxN)
 
 ## ERD
-https://www.lucidchart.com/invitations/accept/20faae8e-1da2-49b4-996c-759ee3bf931a
+https://drive.google.com/open?id=1Jwce5aRizEbzUBecshel0roUkY4SqduM
 
 ## Project board
 https://github.com/gprophete/haitian-recipe-app/projects/1
