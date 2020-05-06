@@ -3,10 +3,10 @@
 ## Description
 The app is designed to be used by users who want to save their food recipes
 
-## The database contains three models 
-1- Recipes
-2- List of items
-3- Categories
+## The database contains three models:
+- Recipes
+- Lists
+- Types
 
 ## Tech used:
 - Express js
