@@ -17,6 +17,7 @@ The app is designed to be used by users who want to save their food recipes
 - html
 - javascript
 - heroku
+- github
 
 ## Wireframe
 (https://drive.google.com/open?id=1aDLHJQdqF1HwASjeoTyJyu-i_jJE2cxN)
