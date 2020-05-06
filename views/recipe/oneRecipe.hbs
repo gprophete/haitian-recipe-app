@@ -95,11 +95,13 @@
 
         <label class="label-item">Dairy</label>
         <div class="single-item">{{dairy}}</div>
+        
         <label class="label-item">Misc</label>
         <div class="single-item">{{misc}}</div>
 
     </a>
     {{/each}}
+
 
     <form action="/list" method="POST">
         <input type="hidden" value="{{oneRecipe._id}}" name="parentId" />

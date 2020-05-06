@@ -1,21 +1,25 @@
-<h1>{{oneRecipe._id}}</h1>
+<h1>Edit List</h1>
 
-<a href= "/list/{{oneList._id}}/edit">
+<a class= "edit-link" href="/list/{{oneList._id}}/edit">
     <button>
         Edit
     </button>
 </a>
-<a href= "/recipe">
-<h4>{{oneList.produce}}</h4>
 
-<h4>{{oneList.animalProtein}}</h4>
-
-<h4>{{oneList.dairy}}</h4>
-
-<h4>{{oneList.misc}}</h4>
-</a>
-<form action= "/list/{{oneList._id}}?_method=DELETE" method="POST">
-    <input type= "submit" value= "Delete">
+<div class= "single-list">
+    <div class= "single-list">{{oneList.produce}}</div>
+<br>
+    <div class= "single-list">{{oneList.dairy}}</div>
+<br>
+    <div class= "single-list">{{oneList.misc}}</div>
+</div>
+<br>
+<form action="/list/{{oneList._id}}?_method=DELETE" method="POST">
+    <input class= "edit-link" type="submit" value="Delete">
 </form>
-
-
+<br>
+<a class= "edit-link" href="/recipe">
+    <button>
+        Recipe page
+    </button>
+</a>

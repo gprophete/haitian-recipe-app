@@ -1,10 +1,11 @@
+
 <h1 class= "header">RECIPES</h1>
 
 
 
 {{#each allRecipe}}
 <a href="/recipe/{{_id}}">
-  <div>
+  
     <h4 class= "item">{{name}}</h4>
 
     {{!-- <h4>{{time}}</h4>
@@ -14,7 +15,7 @@
     <h4>{{prep}}</h4>
 
     <h4>{{servings}}</h4> --}}
-    </div>
+
 </a>
 
 {{/each}}
